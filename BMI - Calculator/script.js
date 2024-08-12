@@ -20,17 +20,20 @@ function calculadora() {
     let cor = '#FF6D6D'; // Cor padrão para erro
 
     if (imc < 18.5) {
-        posicao = '0%';
-        cor = '#6C63FF'; // Cor correspondente
-    } else if (imc >= 18.5 && imc < 24.9) {
-        posicao = '20%'; // Ajuste conforme a largura das cores
-        cor = '#60984B';
-    } else if (imc >= 25 && imc < 29.9) {
-        posicao = '40%';
-        cor = '#8DDA71';
-    } else if (imc >= 30) {
-        posicao = '60%';
-        cor = '#FF6D6D';
+        posicao = '10%';
+        cor = '#6C63FF'; //Magreza
+    } else if (imc >= 18.5 && imc < 24.9) { //Saudável
+        posicao = '30%';
+        cor = '#6fb157';
+    } else if (imc >= 25 && imc < 29.9) { //Acima do peso
+        posicao = '50%';
+        cor = '#fffd91';
+    } else if (imc >= 30 && imc < 34.9) { //Obesidade Grau 1
+        posicao = '70%';
+        cor = '#f3cc79';
+    } else if (imc >= 35) { //Obesidade Grau 2
+        posicao = '85%';
+        cor = '#f87b7b';
     }
 
     triangulo.style.left = posicao;
@@ -44,10 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         delay: 200,
         easing: 'ease', 
         distance: '50px',
-    });
-    
-    sr.reveal('.coluna-esquerda', {
-        origin: 'bottom',
     });
 
     sr.reveal('.imagem', {
